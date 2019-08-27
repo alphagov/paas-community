@@ -1,0 +1,14 @@
+---
+applications:
+  - name: campaign-site
+
+    routes:
+      - route: my-campaign.tlwr.dev.cloudpipelineapps.digital
+
+    buildpacks:
+      - nodejs_buildpack
+
+    env:
+      NODE_ENV: production
+      USERNAME: ((username))
+      PASSWORD: ((password))
