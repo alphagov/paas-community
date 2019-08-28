@@ -1,0 +1,9 @@
+---
+applications:
+  - name: hackney-frontend
+
+    buildpacks:
+      - ruby_buildpack
+
+    services:
+      - hackney-pothole-images
