@@ -10,3 +10,6 @@ applications:
 
     routes:
       - route: hackney-report-a-pothole.london.cloudapps.digital
+
+    env:
+      API_URL: http://hackney-backend.apps.internal:8080

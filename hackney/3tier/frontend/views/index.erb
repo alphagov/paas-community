@@ -66,10 +66,14 @@
 <% if @potholes.empty? %>
   <p class="govuk-body">There have been no reported potholes.</p>
 <% else %>
-  <% @potholes.each do |pothole| %>
-    <p class="govuk-body">
-      <code><%= pothole.guid %></code>
-      <img src="<%= pothole.url %>"/>
-    </p>
-  <% end %>
+  <div class="govuk-grid-row">
+    <% @potholes.each do |pothole| %>
+      <div class="govuk-grid-column-one-third">
+        <p class="govuk-body">
+          <%= pothole.address %>
+        </p>
+        <img style="max-width: 100%;" src="<%= pothole.url %>"/>
+      </div>
+    <% end %>
+  </div>
 <% end %>
