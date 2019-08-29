@@ -10,5 +10,4 @@ applications:
 
     env:
       NODE_ENV: production
-      USERNAME: ((username))
-      PASSWORD: ((password))
+      USE_AUTH: no
