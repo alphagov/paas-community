@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+ruby '~> 2.6.0'
+
+gem 'activerecord'
+gem 'cf-app-utils'
+gem 'pg'
+gem 'rack'
+gem 'sinatra'

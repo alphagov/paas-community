@@ -1,0 +1,16 @@
+---
+applications:
+  - name: hackney-backend
+    memory: 128M
+
+    buildpacks:
+      - ruby_buildpack
+
+    services:
+      - backend-postgres
+
+    routes:
+      - route: hackney-backend.apps.internal
+
+    env:
+      RACK_ENV: production
