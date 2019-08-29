@@ -6,4 +6,4 @@ applications:
       - ruby_buildpack
 
     services:
-      - hackney-pothole-images
+      - hackney-pothole-imgs
