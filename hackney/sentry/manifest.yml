@@ -1,0 +1,51 @@
+---
+applications:
+  - name: hackney-council-sentry
+
+    buildpacks:
+      - https://github.com/alphagov/haproxy-buildpack.git
+      - https://github.com/andy-paine/env-map-buildpack.git
+      - python_buildpack
+
+    routes:
+      - route: hackney-council-sentry.london.cloudapps.digital
+
+    services:
+      - sentry-postgres
+      - sentry-redis
+
+    env:
+      SENTRY_CONF: /app
+      SENTRY_REDIS_HOST: 0.0.0.0
+      SENTRY_REDIS_PORT: 6379
+      SENTRY_SECRET_KEY: ((sentry-secret-key))
+      GITHUB_APP_ID: ((github-app-id))
+      GITHUB_API_SECRET: ((github-api-secret))
+
+    processes:
+      - type: web
+        command: sentry run web
+        health-check-type: port
+        instances: 1
+        memory: 2G
+
+      - type: worker
+        command: sentry run worker
+        health-check-type: process
+        instances: 1
+        memory: 256M
+
+      - type: cron
+        command: sentry run cron
+        health-check-type: process
+        instances: 1
+        memory: 256M
+
+    sidecars:
+      - name: haproxy
+        command: ./haproxy -f haproxy.cfg
+        memory: 64M
+        process_types:
+          - web
+          - worker
+          - cron
