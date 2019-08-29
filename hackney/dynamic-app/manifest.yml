@@ -1,0 +1,7 @@
+applications:
+  - name: my-dynamic-app
+    buildpacks: [ruby_buildpack]
+    routes:
+      - route: tlwr-dynamic-app.london.cloudapps.digital
+    command: ruby app.rb
+    memory: 128M
