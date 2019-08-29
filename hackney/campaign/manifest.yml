@@ -3,7 +3,7 @@ applications:
   - name: campaign-site
 
     routes:
-      - route: my-campaign.tlwr.dev.cloudpipelineapps.digital
+      - route: hackney-campaign-site.london.cloudapps.digital
 
     buildpacks:
       - nodejs_buildpack
