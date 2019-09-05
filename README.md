@@ -1,7 +1,7 @@
 # paas-incubator
 
 A repository where we put code snippets, demos, and recipes for running open
-source software on [GOV.UK PaaS](https://www.cloud.service.gov.uk].
+source software on [GOV.UK PaaS](https://www.cloud.service.gov.uk).
 
 ## Index
 
