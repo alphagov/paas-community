@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: hackney-council-sentry
+  - name: ((deployment))-sentry
 
     buildpacks:
       - https://github.com/alphagov/haproxy-buildpack.git
@@ -8,7 +8,7 @@ applications:
       - python_buildpack
 
     routes:
-      - route: hackney-council-sentry.london.cloudapps.digital
+      - route: ((deployment))-sentry.london.cloudapps.digital
 
     services:
       - sentry-postgres
