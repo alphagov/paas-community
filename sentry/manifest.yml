@@ -16,8 +16,8 @@ applications:
 
     env:
       SENTRY_CONF: /app
-      SENTRY_REDIS_HOST: 0.0.0.0
-      SENTRY_REDIS_PORT: 6379
+      REDIS_NON_TLS_HOST: 0.0.0.0
+      REDIS_NON_TLS_PORT: 6379
       SENTRY_SECRET_KEY: ((sentry-secret-key))
       GITHUB_APP_ID: ((github-app-id))
       GITHUB_API_SECRET: ((github-api-secret))

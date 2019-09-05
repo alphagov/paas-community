@@ -25,6 +25,11 @@ Create Redis instance
 $ cf create-service redis tiny-3.2 sentry-redis`
 ```
 
+Wait for services to provision before continuing. The status of the provisioning can be checked with.
+```
+$ cf services
+```
+
 ## Push the app
 
 ```
@@ -40,10 +45,10 @@ $ cf push --var deployment=my-deployment-name \
 ```
 export deployment='my-deployment-name'
 
-$ cf ssh ${deployment}-sentry -t -c -/tmp/lifecycle/launcher /home/vcap/app bash
+$ cf v3-ssh ${deployment}-sentry -t -c "/tmp/lifecycle/shell"
 
-# Ensure Sentry is setup
-vcap@... $ sentry init
+# Ensure Sentry has run all migrations
+vcap@... $ sentry upgrade
 
 ...
 

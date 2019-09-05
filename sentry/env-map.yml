@@ -5,6 +5,6 @@ env_vars:
   SENTRY_DB_PASSWORD: ".postgres[0].credentials.password"
   SENTRY_POSTGRES_PORT: ".postgres[0].credentials.port"
 
-  REDIS_HOST: ".redis[0].credentials.host"
-  REDIS_PORT: ".redis[0].credentials.port"
-  SENTRY_REDIS_PASSWORD: ".redis[0].credentials.password"
+  REDIS_TLS_HOST: ".redis[0].credentials.host"
+  REDIS_TLS_PORT: ".redis[0].credentials.port"
+  REDIS_PASSWORD: ".redis[0].credentials.password"
