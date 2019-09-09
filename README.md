@@ -11,6 +11,9 @@ with departments and councils.
 [sentry](sentry) shows you how to run the Sentry exception monitoring tool
 on GOV.UK PaaS.
 
+[alertmanager](alertmanager) shows you how to run the Alertmanager alert
+management and routing tool for Prometheus on GOV.UK PaaS.
+
 ## Contributing
 
 If you discover any errors, or if you have an open source tool which you run on

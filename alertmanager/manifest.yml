@@ -1,0 +1,60 @@
+---
+
+alertmanager_config: &alertmanager_config
+  docker:
+    image: prom/alertmanager:v0.19.0
+  command: |
+    sh -euc '
+      echo "${ALERTMANAGER_CONFIG}" > /etc/alertmanager/alertmanager.yml ;
+      cat /etc/alertmanager/alertmanager.yml ;
+      /bin/alertmanager \
+        --config.file=/etc/alertmanager/alertmanager.yml \
+        --cluster.peer=alertmanager-${DEPLOYMENT}.apps.internal:9094 \
+        --web.external-url=https://alertmanager-${DEPLOYMENT}-${AM_INDEX}.london.cloudapps.digital ;
+    '
+
+alertmanager_env: &alertmanager_env
+  DEPLOYMENT: ((deployment))
+  ALERTMANAGER_CONFIG: |
+                       global:
+                         resolve_timeout: 5m
+                       receivers:
+                         - name: default
+
+                       route:
+                         receiver: default
+                         group_wait: 30s
+                         group_interval: 5m
+                         repeat_interval: 4h
+                         group_by: [cluster, alertname]
+
+applications:
+  - name: alertmanager-0
+    <<: *alertmanager_config
+    routes:
+      - route: alertmanager-((deployment)).apps.internal
+      - route: alertmanager-((deployment))-0.apps.internal
+      - route: alertmanager-((deployment))-0.london.cloudapps.digital
+    env:
+      <<: *alertmanager_env
+      AM_INDEX: 0
+
+  - name: alertmanager-1
+    <<: *alertmanager_config
+    routes:
+      - route: alertmanager-((deployment)).apps.internal
+      - route: alertmanager-((deployment))-1.apps.internal
+      - route: alertmanager-((deployment))-1.london.cloudapps.digital
+    env:
+      <<: *alertmanager_env
+      AM_INDEX: 1
+
+  - name: alertmanager-2
+    <<: *alertmanager_config
+    routes:
+      - route: alertmanager-((deployment)).apps.internal
+      - route: alertmanager-((deployment))-2.apps.internal
+      - route: alertmanager-((deployment))-2.london.cloudapps.digital
+    env:
+      <<: *alertmanager_env
+      AM_INDEX: 2
