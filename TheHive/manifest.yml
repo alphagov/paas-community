@@ -1,0 +1,22 @@
+---
+applications:
+- name: thehive
+  memory: 4G
+  disk_quota: 4G
+  docker:
+    image: thehiveproject/thehive:3.4.0
+  command: ./entrypoint --es-uri http://elastic-for-hive.apps.internal:9300
+  health-check-type: process
+
+- name: elasticsearch-proxy-for-hive
+  buildpacks:
+    - https://github.com/andy-paine/env-map-buildpack.git
+    - https://github.com/alphagov/haproxy-buildpack.git
+    - binary_buildpack
+
+  routes:
+      - route: elastic-for-hive.apps.internal
+  services:
+    - elastic-for-hive
+  health-check-type: process
+  command: ./haproxy -f haproxy.cfg
