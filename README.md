@@ -14,6 +14,9 @@ on GOV.UK PaaS.
 [alertmanager](alertmanager) shows you how to run the Alertmanager alert
 management and routing tool for Prometheus on GOV.UK PaaS.
 
+[the-hive](the-hive) is an open-source incident management platform.
+
+
 ## Contributing
 
 If you discover any errors, or if you have an open source tool which you run on
