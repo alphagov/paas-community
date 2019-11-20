@@ -1,22 +1,30 @@
 ---
 applications:
-- name: thehive
+- name: ((thehive-instance-name))
   memory: 4G
   disk_quota: 4G
   docker:
     image: thehiveproject/thehive:3.4.0
-  command: ./entrypoint --es-uri http://elastic-for-hive.apps.internal:9300
+  command: ./entrypoint --es-uri http://((es-service)).apps.internal:9300 --cortex-url https://((cortex-instance-name)).cloudapps.digital --cortex-port ((cortex-port)) --cortex-key ((cortex-key))
   health-check-type: process
 
-- name: elasticsearch-proxy-for-hive
+- name: ((es-instance-name))
   buildpacks:
     - https://github.com/andy-paine/env-map-buildpack.git
     - https://github.com/alphagov/haproxy-buildpack.git
     - binary_buildpack
 
   routes:
-      - route: elastic-for-hive.apps.internal
+      - route: ((es-service)).apps.internal
   services:
-    - elastic-for-hive
+    - ((es-service))
   health-check-type: process
   command: ./haproxy -f haproxy.cfg
+
+- name: ((cortex-instance-name))
+  memory: 2G
+  disk_quota: 4G
+  docker:
+    image: thehiveproject/cortex:3.0.0
+  command: ./entrypoint --es-uri http://((es-service)).apps.internal:9400
+  health-check-type: process
