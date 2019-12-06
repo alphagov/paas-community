@@ -1,0 +1,7 @@
+# Sitespeed.io
+
+- [x] Sitespeed to run and test websites
+- [x] Sitespeed to store results in InfluxDB
+- [ ] Grafana instance set up and connected to InfluxDB
+- [ ] Grafana dashboards bootstrapped
+- [ ] Microservice for scheduling web page profiling tasks
