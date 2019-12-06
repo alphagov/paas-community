@@ -1,0 +1,26 @@
+---
+applications:
+  # We use this app to run tasks, for example the following will test gov.uk
+  # cf run-task sitespeed \
+  #    -k 4G -m 4G        \
+  # 'export PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin && export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && export influxdb_host=$(echo $VCAP_SERVICES | jq -r .influxdb[0].credentials.hostname) && export influxdb_port=$(echo $VCAP_SERVICES | jq -r .influxdb[0].credentials.port) && export influxdb_username=$(echo $VCAP_SERVICES | jq -r .influxdb[0].credentials.username) && export influxdb_password=$(echo $VCAP_SERVICES | jq -r .influxdb[0].credentials.password) && nvm exec --lts -- /sitespeed.io/docker/scripts/start.sh --influxdb.protocol=https --influxdb.database=defaultdb --influxdb.host=$influxdb_host --influxdb.port=$influxdb_port --influxdb.username=$influxdb_username --influxdb.password=$influxdb_password -b chrome --chrome.args no-sandbox https://www.gov.uk'
+  - name: sitespeed
+
+    services:
+      - sitespeed-db
+
+    instances: 1
+
+    docker:
+      image: tlwr/sitespeed
+
+    command: sleep 86400
+
+    env:
+      SITESPEED_IO_BROWSERTIME__XVFB: true
+      SITESPEED_IO_BROWSERTIME__DOCKER: true
+
+    memory: 2G
+    disk_quota: 4G
+
+    health-check-type: process
