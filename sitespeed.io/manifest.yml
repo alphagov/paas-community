@@ -24,3 +24,24 @@ applications:
     disk_quota: 4G
 
     health-check-type: process
+
+  # We use this app to bootstrap the grafana dashboards that we need
+  - name: sitespeed-grafana-bootstrap
+
+    instances: 0
+
+    docker:
+      image: sitespeedio/grafana-bootstrap
+
+    no-route: true
+
+    env:
+      GF_USER: ((grafana_admin_user))
+      GF_PASSWORD: ((grafana_admin_password))
+      GF_API: https://((grafana_domain))api
+      BACKEND: influxdb
+
+    memory: 512M
+    disk_quota: 1G
+
+    health-check-type: process
