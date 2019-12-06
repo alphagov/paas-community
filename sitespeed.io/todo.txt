@@ -5,3 +5,4 @@
 - [ ] Grafana instance set up and connected to InfluxDB
 - [ ] Grafana dashboards bootstrapped
 - [ ] Microservice for scheduling web page profiling tasks
+- [ ] Set up AWS s3 for results
