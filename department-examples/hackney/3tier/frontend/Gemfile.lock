@@ -34,7 +34,7 @@ GEM
     jmespath (1.4.0)
     mustermann (1.0.3)
     public_suffix (3.1.1)
-    rack (2.0.7)
+    rack (2.0.8)
     rack-protection (2.0.7)
       rack
     sinatra (2.0.7)
