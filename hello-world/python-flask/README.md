@@ -1,7 +1,7 @@
 # Hello world app in flask/gunicorn/paas
 
 
-A minimal flask app that is deployed to GOV.UK PaaS to run in gunicorn
+A minimal flask app [`hello.py`](hello.py)that is deployed to GOV.UK PaaS to run in gunicorn
 
 install python
 ```
