@@ -1,22 +1,42 @@
-# GOV.UK PaaS pattern book
+# GOV.UK PaaS Pattern Language
 
-> A book of patterns for usage of [GOV.UK PaaS]
+> A pattern language for [GOV.UK PaaS]
 
-The PaaS has a good level of developer documentation in the [GOV.UK PaaS tech docs] however it is not always easy for a user of the platform to figure out how to do things or to make use of the platform.
+## Introduction
 
-This book is intended to bring together some of the more commonly encountered patterns and to show how they can be used and to reference examples where tenenants have implemented the patterns.
+[GOV.UK PaaS] has a good level of lower level developer documentation in the [GOV.UK PaaS tech docs] however it is not always easy for a user of the platform to figure out how to do things or to make use of the platform.
 
-The pattern approach seems appropriate given the nature of the platform
+This [pattern language] brings together some of the more commonly encountered patterns and to show how they can be used and to reference examples where tenants have implemented the patterns.
 
-- [pattern-template.md]
+It is a practical reference to the various ways the PaaS can be used to solve problems. Patterns can be reused and combined in different combinations.
+
+## Language structure
+
+The elements of the language are entities called patterns. Each pattern describes a problem occurs over and over again and then describes the core of a solution to that problem.
+
+The patterns all follow a common format based on a [template](pattern-template.md). This approached is heavily influenced by Christopher Alexander's book [A Pattern Language]
+
+| part | decription |
+|------|------------|
+|Title| |
+|Problem statement| |
+|Diagram| |
+|Solution| |
+|Discussion| |
+|See also| |
+
+Each pattern may be connected to other patterns and together they comprise the pattern language.
+
 
 ## Patterns
 
 - [ ] [01-get-a-paas-account.md](01-get-a-paas-account.md)
+- [ ] [02-install-cf-cli-without-admin.md](02-install-cf-cli-without-admin.md)
 
+<!--
 ## Possibles
-- [ ] [02-install-the-cli.md](02-install-the-cli.md)
-- [ ] [03-hello-world-static.md](03-hello-world-static.md)
+- [ ] [install-the-cli.md](install-the-cli.md)
+- [ ] [hello-world-static.md](hello-world-static.md)
 - [ ] [hello-world-python.md](hello-world-python.md)
 - [ ] [hello-world-ruby.md](hello-world-ruby.md)
 - [ ] [hello-world-nodejs.md](hello-world-nodejs.md)
@@ -47,5 +67,10 @@ The pattern approach seems appropriate given the nature of the platform
 - [ ] [backup-databases.md](backup-databases.md)
 - [ ] [how-export-logs.md](how-export-logs.md)
 - [ ] [setup-container-networking.md](setup-container-networking.md)
+- [ ] [install-the-cf7-cli.md](install-the-cf7-cli.md)
+-->
 
-[GOV.UK PaaS]: https://cloud.service.gov.uk> A book of patterns for usage of [GOV.UK PaaS]
+[pattern language]: https://en.wikipedia.org/wiki/Pattern_language
+[A Pattern Language]: https://en.wikipedia.org/wiki/A_Pattern_Language
+[GOV.UK PaaS tech docs]: https://docs.cloud.service.gov.uk/
+[GOV.UK Paas]: https://cloud.service.gov.uk
