@@ -43,7 +43,6 @@ brew install cloudfoundry/tap/cf7-cli
 log into paas
 
 ```
-open https://login.cloud.service.gov.uk/passcode
 cf7 login -a https://api.cloud.service.gov.uk -sso
 ```
 
