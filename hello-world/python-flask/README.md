@@ -1,7 +1,7 @@
 # Hello world app in flask/gunicorn/paas
 
 
-A minimal flask app that is deployed to GOV.UK PaaS to run in gunicorn
+A minimal flask app [`hello.py`](hello.py)that is deployed to GOV.UK PaaS to run in gunicorn
 
 install python
 ```
@@ -43,7 +43,6 @@ brew install cloudfoundry/tap/cf7-cli
 log into paas
 
 ```
-open https://login.cloud.service.gov.uk/passcode
 cf7 login -a https://api.cloud.service.gov.uk -sso
 ```
 
