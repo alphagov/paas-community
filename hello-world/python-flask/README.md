@@ -1,9 +1,9 @@
 # Hello world app in flask/gunicorn/paas
 
 
-A minimal flask app [`hello.py`](hello.py)that is deployed to GOV.UK PaaS to run in gunicorn
+A minimal flask app [`hello.py`](hello.py)that is deployed to GOV.UK PaaS to run in [gunicorn]
 
-install python
+install python3
 ```
 brew install python3
 ```
@@ -87,3 +87,5 @@ delete the app
 ```
 cf7 delete <APP NAME>
 ```
+
+[gunicorn]: https://gunicorn.org/
