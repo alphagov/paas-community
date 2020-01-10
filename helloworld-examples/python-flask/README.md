@@ -4,7 +4,7 @@
 A minimal [python3] app using the [flask] [wsgi] framework that is deployed to [GOV.UK PaaS] to run in [gunicorn] using the [python buildpack]
 
 - [`requirements.txt`](requirements.txt) contains the dependencies that are installed using [pip] and indicates that the [python buildpack] should be used
-- [`hello.py`](hello.py) is the sample [python] application
+- [`hello.py`](hello.py) is the sample [python3] application
 - [`runtime.txt`](runtime.txt) sets the specific [python] version to use
 - [`Procfile`](Procfile) tells the runtime how to start the application 
 - [`manifest.yml`](manifest.yml) provides runtime settings such as the application name, memory size 
