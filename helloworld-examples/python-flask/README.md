@@ -94,6 +94,7 @@ cf7 delete <APP NAME>
 ```
 [flask]:https://palletsprojects.com/p/flask/
 [gunicorn]: https://gunicorn.org/
+[pip]: https://pip.pypa.io/en/stable/
 [python3]: https://docs.python.org/3/
 [python buildpack]: https://docs.cloudfoundry.org/buildpacks/python/index.html
 [wsgi]: https://wsgi.readthedocs.io/en/latest/
