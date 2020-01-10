@@ -92,4 +92,4 @@ cf7 delete <APP NAME>
 [python3]: https://docs.python.org/3/
 [python buildpack]: https://docs.cloudfoundry.org/buildpacks/python/index.html
 [wsgi]: https://wsgi.readthedocs.io/en/latest/
-[GOV.UK PaaS]: (https://docs.cloud.service.gov.uk/)
+[GOV.UK PaaS]: https://docs.cloud.service.gov.uk
