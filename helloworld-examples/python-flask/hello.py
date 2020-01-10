@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 
 from flask import Flask
-from flask import make_response
-from flask import render_template
-from flask import request
 import os
 
 
 app = Flask(__name__)
+
 
 @app.route("/")
 def index():
@@ -15,6 +13,7 @@ def index():
                  <li><a href='/hello'>/hello</a></li>
                  <li><a href='/hello/world'>/hello/world</a></li>
                </ul>"""
+
 
 @app.route("/hello")
 def hello():

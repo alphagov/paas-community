@@ -1,9 +1,9 @@
-# Hello world app in flask/gunicorn/paas
+# Hello world app in python3 using flask and gunicorn 
 
 
-A minimal flask app that is deployed to GOV.UK PaaS to run in gunicorn
+A minimal [python3] app using the [flask] [wsgi] framework that is deployed to [GOV.UK PaaS] to run in [gunicorn] using the [python buildpack]
 
-install python
+install python3
 ```
 brew install python3
 ```
@@ -87,3 +87,9 @@ delete the app
 ```
 cf7 delete <APP NAME>
 ```
+[flask]:https://palletsprojects.com/p/flask/
+[gunicorn]: https://gunicorn.org/
+[python3]: https://docs.python.org/3/
+[python buildpack]: https://docs.cloudfoundry.org/buildpacks/python/index.html
+[wsgi]: https://wsgi.readthedocs.io/en/latest/
+[GOV.UK PaaS]: https://docs.cloud.service.gov.uk
