@@ -1,0 +1,9 @@
+---
+applications:
+- name: hello-flask
+  random-route: true
+  instances: 1
+  memory: 64M
+  buildpack: python_buildpack
+  health-check-type: http
+  health-check-http-endpoint: /hello
