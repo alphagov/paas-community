@@ -1,0 +1,3 @@
+[submodule "stratos/stratos"]
+	path = stratos/stratos
+	url = https://github.com/cloudfoundry/stratos

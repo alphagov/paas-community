@@ -1,0 +1,18 @@
+applications:
+- name: stratos
+  path: ./stratos
+  memory: 128M
+  timeout: 180
+  buildpacks:
+  - https://github.com/cloudfoundry-incubator/stratos-buildpack#v2.4
+  health-check-type: port
+  instances: 1
+  routes:
+  - route: ((route))
+  env:
+    CF_API_FORCE_SECURE: true
+    SSO_LOGIN: true
+    CF_CLIENT: ((cf_client))
+    CF_CLIENT_SECRET: ((cf_client_secret))
+    SESSION_STORE_SECRET: ((session_store_secret))
+
