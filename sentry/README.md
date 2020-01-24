@@ -22,7 +22,7 @@ $ cf create-service postgres tiny-unencrypted-10 sentry-postgres
 Create Redis instance
 
 ```
-$ cf create-service redis tiny-3.2 sentry-redis`
+$ cf create-service redis tiny-3.2 sentry-redis
 ```
 
 Wait for services to provision before continuing. The status of the provisioning can be checked with.
