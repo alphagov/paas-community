@@ -35,7 +35,7 @@ $ cf services
 ```
 # Using the CF CLI version 7
 $ cf push --var deployment=my-deployment-name \
-          --var sentry-secret=pick-a-random-string \
+          --var sentry-secret-key=pick-a-random-string \
           --var github-app-id=github-oauth-client-id \
           --var github-api-secret=github-oauth-client-secret
 ```
