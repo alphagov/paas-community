@@ -1,0 +1,9 @@
+---
+packages:
+- openssl
+- libpcre3
+- procps
+- perl
+- jq
+- ack-grep
+- https://bintray.com/kong/kong-deb/download_file?file_path=kong-2.0.1.bionic.amd64.deb
