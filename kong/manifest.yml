@@ -1,0 +1,7 @@
+---
+applications:
+- name: cf-kong
+  buildpack: https://github.com/cloudfoundry/multi-buildpack/
+  command: ./run.sh
+  services:
+  - kong-db
