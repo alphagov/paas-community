@@ -1,0 +1,13 @@
+---
+applications:
+    - name: pgadmin
+      buildpacks:
+        - https://github.com/cloudfoundry/apt-buildpack.git#v0.2.2
+        - python_buildpack
+      command: ./install.sh
+      health-check-type: http
+      routes:
+        - route: "((org))-((space))-pgadmin.london.cloudapps.digital"
+      env:
+        PGADMIN_SETUP_EMAIL: ((email))
+        PGADMIN_SETUP_PASSWORD: ((password))

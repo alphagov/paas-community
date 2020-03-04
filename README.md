@@ -18,6 +18,7 @@ on GOV.UK PaaS.
 
 [the-hive](the-hive) is an open-source incident management platform.
 
+[pgadmin4](pgadmin) shows you how to run PgAdmin4 on GOV.UK PaaS to administer your Postgres backing services.
 
 ## Contributing
 
