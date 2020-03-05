@@ -13,8 +13,8 @@ The resulting hostname will be in the form `org-space-pgadmin.london.cloudapps.d
 
 ```
 cf push \
-  --var org="${YOUR_ORG}"
-  --var space="${YOUR_SPACE}"
+  --var org="${YOUR_ORG}" \
+  --var space="${YOUR_SPACE}" \
   --var email=emailto_log_in_with \
   --var password=password_to_log_in_with
 ```
@@ -31,3 +31,4 @@ After binding, restage the app.
 ```
 cf restage pgadmin
 ```
+
