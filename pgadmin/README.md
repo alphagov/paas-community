@@ -3,6 +3,8 @@ This quick start/incubator project can be used to deploy [PgAdmin 4](https://www
 on [GOV.UK PaaS](https://www.cloud.service.gov.uk/). It will detect any bound Postgres databases,
 and connect to them automatically.
 
+![screenshot of pgadmin](../pgadmin.png)
+
 
 ## Getting started
 Clone this repository, and push it to your target space with the following password.
