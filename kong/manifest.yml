@@ -1,7 +1,9 @@
 ---
 applications:
 - name: cf-kong
-  buildpack: https://github.com/cloudfoundry/multi-buildpack/
+  buildpacks:
+  - https://github.com/cloudfoundry/apt-buildpack
+  - https://github.com/cloudfoundry/binary-buildpack
   command: ./run.sh
   services:
   - kong-db
