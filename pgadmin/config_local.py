@@ -25,3 +25,15 @@ SESSION_DB_PATH = os.path.join(DATA_DIR, 'sessions')
 # for application logs, so pgadmin must
 # log to there if we want to see them
 LOG_FILE="/home/vcap/app/pgadmin4.log"
+
+
+# PgAdmin expects to be able to find a
+# couple of standard Postgres binaries.
+# They live outside of the normal path
+# for Ubuntu, so we have to set them.
+DEFAULT_BINARY_PATHS= {
+    "pg": "/home/vcap/deps/0/bin/",
+    # These are left blank deliberately
+    "ppas": "",
+    "gpdb": ""
+}
