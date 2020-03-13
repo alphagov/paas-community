@@ -3,7 +3,7 @@ applications:
   - name: campaign-site
 
     routes:
-      - route: hackney-campaign-site.london.cloudapps.digital
+      - route: gov-campaign-site.london.cloudapps.digital
 
     buildpacks:
       - nodejs_buildpack
