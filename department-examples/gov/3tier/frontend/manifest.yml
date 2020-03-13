@@ -1,0 +1,16 @@
+---
+applications:
+  - name: gov-frontend
+    memory: 256M
+
+    buildpacks:
+      - ruby_buildpack
+
+    services:
+      - gov-pothole-imgs
+
+    routes:
+      - route: gov-report-a-pothole.london.cloudapps.digital
+
+    env:
+      API_URL: http://gov-backend.apps.internal:8080

@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: hackney-backend
+  - name: gov-backend
     memory: 128M
 
     buildpacks:
@@ -10,7 +10,7 @@ applications:
       - backend-postgres
 
     routes:
-      - route: hackney-backend.apps.internal
+      - route: gov-backend.apps.internal
 
     env:
       RACK_ENV: production

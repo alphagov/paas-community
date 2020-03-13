@@ -11,5 +11,5 @@
 )
 
 (
-  cf add-network-policy hackney-frontend --destination-app hackney-backend
+  cf add-network-policy gov-frontend --destination-app gov-backend
 )
