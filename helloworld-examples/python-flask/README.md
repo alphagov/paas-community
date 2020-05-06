@@ -1,7 +1,7 @@
 # Hello world app in python3 using flask and gunicorn 
 
 
-A minimal [python] app using the [flask] [wsgi] framework that is deployed to [GOV.UK PaaS] to run in [gunicorn] using the [python buildpack]
+A minimal [python] app using the [flask] [wsgi] framework that is deployed to [GOV.UK PaaS] to run in [gunicorn] using the [command line interface] and the [python buildpack]
 
 - [`Procfile`](Procfile) tells the runtime how to start the application 
 - [`hello.py`](hello.py) is the sample [python] application
@@ -41,27 +41,27 @@ run the app locally using gunicorn
 gunicorn hello:app
 ```
 
-install the CF7 CLI with homebrew
+install the CF CLI with homebrew
 
 ```
-brew install cloudfoundry/tap/cf7-cli
+brew install cloudfoundry/tap/cf-cli
 ```
 
 log into paas
 
 ```
-cf7 login -a https://api.cloud.service.gov.uk --sso
+cf login -a https://api.cloud.service.gov.uk --sso
 ```
 
 deploy the app
 ```
-cf7 t -o <YOUR_ORG> -s <YOUR_SPACE>
-cf7 push
+cf t -o <YOUR_ORG> -s <YOUR_SPACE>
+cf push
 ```
 
 check the app is running
 ```
-cf7 a
+cf a
 ```
 
 test
@@ -71,29 +71,30 @@ curl https://<APP NAME>.cloudapps.digital/hello
 
 look at the logs
 ```
-cf7 logs <APP NAME>
+cf logs <APP NAME>
 ```
 
 jump into the container
 
 ```
-cf7 ssh <APP NAME>
+cf ssh <APP NAME>
 ```
 
 scale the app
 ```
-cf7 scale -i 3 <APP NAME>
+cf scale -i 3 <APP NAME>
 ```
 
 stop the app
 ```
-cf7 stop <APP NAME>
+cf stop <APP NAME>
 ```
 
 delete the app
 ```
-cf7 delete <APP NAME>
+cf delete <APP NAME>
 ```
+[command line interface]: https://docs.cloud.service.gov.uk/get_started.html#set-up-the-cloud-foundry-command-line
 [flask]:https://palletsprojects.com/p/flask/
 [gunicorn]: https://gunicorn.org/
 [pip]: https://pip.pypa.io/en/stable/
