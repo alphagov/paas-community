@@ -1,0 +1,26 @@
+applications:
+- name: ((deployment))-jaeger-all-in-one
+  buildpacks:
+  - binary_buildpack
+  memory: 256M
+  health-check-type: http
+  health-check-http-endpoint: /
+  routes:
+  - route: jaeger-((deployment)).apps.internal
+  - route: jaeger-((deployment)).cloudapps.digital
+  path: jaeger-all-in-one
+  command: ./jaeger-all-in-one --sampling.strategies-file=sampling_strategies.json --query.port=$PORT
+
+- name: ((deployment))-example-app
+  buildpacks:
+  - binary_buildpack
+  memory: 256M
+  health-check-type: http
+  health-check-http-endpoint: /
+  routes:
+  - route: example-app-((deployment)).cloudapps.digital
+  path: example-app
+  command: ./example-hotrod all
+  env:
+    JAEGER_AGENT_HOST: jaeger-((deployment)).apps.internal
+    JAEGER_AGENT_PORT: 6831
