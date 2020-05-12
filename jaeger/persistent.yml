@@ -10,7 +10,13 @@ applications:
   - route: jaeger-((deployment)).apps.internal
   - route: jaeger-((deployment)).cloudapps.digital
   path: jaeger-all-in-one
-  command: ./jaeger-all-in-one --sampling.strategies-file=sampling_strategies.json --query.port=$PORT
+  command: |
+    ./jaeger-all-in-one \
+    --sampling.strategies-file=sampling_strategies.json \
+    --query.port=$PORT \
+    --es.server-urls="https://$ES_HOST:$ES_PORT" \
+    --es.username=$ES_USERNAME \
+    --es.password=$ES_PASSWORD
   services:
   - jaeger-elasticsearch
   env:
