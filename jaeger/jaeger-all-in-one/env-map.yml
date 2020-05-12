@@ -1,0 +1,4 @@
+env_vars:
+  ES_SERVER_URLS: '.elasticsearch[0].credentials | "https://\(.hostname):\(.port|tostring)"'
+  ES_USERNAME: ".elasticsearch[0].credentials.username"
+  ES_PASSWORD: ".elasticsearch[0].credentials.password"
