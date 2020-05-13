@@ -1,0 +1,23 @@
+applications:
+- name: jaeger-all-in-one
+  buildpacks:
+  - https://github.com/alphagov/env-map-buildpack
+  - binary_buildpack
+  memory: 256M
+  health-check-type: http
+  health-check-http-endpoint: /
+  routes:
+  - route: jaeger-((deployment)).apps.internal
+  - route: jaeger-((deployment)).cloudapps.digital
+  path: jaeger-all-in-one
+  command: |
+    ./jaeger-all-in-one \
+    --sampling.strategies-file=sampling_strategies.json \
+    --query.port=$PORT \
+    --es.server-urls="https://$ES_HOST:$ES_PORT" \
+    --es.username=$ES_USERNAME \
+    --es.password=$ES_PASSWORD
+  services:
+  - jaeger-elasticsearch
+  env:
+    SPAN_STORAGE_TYPE: elasticsearch
