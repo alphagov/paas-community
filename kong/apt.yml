@@ -6,4 +6,4 @@ packages:
 - perl
 - jq
 - ack-grep
-- https://bintray.com/kong/kong-deb/download_file?file_path=kong-2.0.2.bionic.amd64.deb
+- https://bintray.com/kong/kong-deb/download_file?file_path=kong-2.0.4.bionic.amd64.deb
