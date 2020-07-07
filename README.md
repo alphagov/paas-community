@@ -20,6 +20,10 @@ on GOV.UK PaaS.
 
 [pgadmin4](pgadmin) shows you how to run PgAdmin4 on GOV.UK PaaS to administer your Postgres backing services.
 
+## Cloud Foundry Community
+
+The Cloud Foundry community maintain another shared set of examples in [the cloudfoundry-samples GitHub organisation](https://github.com/cloudfoundry-samples)
+
 ## Contributing
 
 If you discover any errors, or if you have an open source tool which you run on
