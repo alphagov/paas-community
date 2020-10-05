@@ -1,0 +1,15 @@
+---
+applications:
+  - name: observe-demo-frontend
+    random-route: true
+    buildpacks:
+      - ruby_buildpack
+    env:
+      BACKEND_URL: http://observe-demo-backend.apps.internal:8080
+    disk_quota: 128M
+    memory: 64M
+    processes:
+      - type: web
+        health-check-type: http
+        health-check-http-endpoint: /
+        command: ruby main.rb
