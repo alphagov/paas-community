@@ -1,7 +1,8 @@
-# paas-incubator
+# paas-community
 
-A repository where we put code snippets, demos, and recipes for running open
-source software on [GOV.UK PaaS](https://www.cloud.service.gov.uk).
+A repository where [GOV.UK PaaS](https://www.cloud.service.gov.uk) and our user community store code snippets, demos, and recipes for how to run useful software.
+
+If you're new to GOV.UK PaaS these examples can help teach you how to use it. If you're an established user you can learn new ways of doing things. This sits alongside our [written documentation](https://docs.cloud.service.gov.uk).
 
 ## Index
 
@@ -20,9 +21,9 @@ on GOV.UK PaaS.
 
 [pgadmin4](pgadmin) shows you how to run PgAdmin4 on GOV.UK PaaS to administer your Postgres backing services.
 
-## Cloud Foundry Community
+## Other sources of examples
 
-The Cloud Foundry community maintain another shared set of examples in [the cloudfoundry-samples GitHub organisation](https://github.com/cloudfoundry-samples)
+GOV.UK PaaS is based on Cloud Foundry. The Cloud Foundry community maintain another shared set of examples in [the cloudfoundry-samples GitHub organisation](https://github.com/cloudfoundry-samples)
 
 ## Contributing
 
