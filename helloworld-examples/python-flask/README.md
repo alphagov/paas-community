@@ -1,6 +1,5 @@
 # Hello world app in python3 using flask and gunicorn 
 
-
 A minimal [python] app using the [flask] [wsgi] framework that is deployed to [GOV.UK PaaS] to run in [gunicorn] using the [command line interface] and the [python buildpack]
 
 - [`Procfile`](Procfile) tells the runtime how to start the application 
@@ -10,18 +9,24 @@ A minimal [python] app using the [flask] [wsgi] framework that is deployed to [G
 - [`requirements.txt`](requirements.txt) contains the dependencies that are installed using [pip] and indicates that the [python buildpack] should be used
 - [`runtime.txt`](runtime.txt) sets the specific [python] version to use
 
+## Demo
+
+[![](python-flask.gif)](https://asciinema.org/a/383080?speed=4&size=medium&autoplay=1)
+
+## Commands
+
 install python3
 ```
 brew install python3
 ```
 
-create virtual environment
+create virtual environment and activate
 ```
 python3 -m venv venv
 . venv/bin/activate
 ```
 
-install dependencies
+install dependencies into virtual environment 
 ```
 pip3 install -r requirements.txt
 ```
@@ -41,13 +46,13 @@ run the app locally using gunicorn
 gunicorn hello:app
 ```
 
-install the CF CLI with homebrew
+install the Cloud Foundry CLI with [homebrew]
 
 ```
 brew install cloudfoundry/tap/cf-cli
 ```
 
-log into paas
+log into GOV.UK PaaS (assumes you have an account, see [gettingstarted])
 
 ```
 cf login -a https://api.cloud.service.gov.uk --sso
@@ -64,8 +69,7 @@ check the app is running
 cf a
 ```
 
-test
-```
+test the app
 curl https://<APP NAME>.cloudapps.digital/hello
 ```
 
@@ -96,7 +100,9 @@ cf delete <APP NAME>
 ```
 [command line interface]: https://docs.cloud.service.gov.uk/get_started.html#set-up-the-cloud-foundry-command-line
 [flask]:https://palletsprojects.com/p/flask/
+[gettingstarted]: https://www.cloud.service.gov.uk/get-started/
 [gunicorn]: https://gunicorn.org/
+[homebrew]: https://brew.sh
 [pip]: https://pip.pypa.io/en/stable/
 [python]: https://docs.python.org/3/
 [python buildpack]: https://docs.cloudfoundry.org/buildpacks/python/index.html
