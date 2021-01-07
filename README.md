@@ -12,14 +12,23 @@ management and routing tool for Prometheus on GOV.UK PaaS.
 [department-examples](department-examples) contains demos that we have done
 with departments and councils.
 
+[helloworld-examples](helloworld-examples) some simple examples showing how to deploy different languages
+
+
+[jaeger](jaeger) shows you how to run a distributed tracing and analysis server.
+
 [kong](kong) enables you to run [Kong](https://konghq.com/), the open source API platform on GOV.UK PaaS
+
+[pgadmin4](pgadmin) shows you how to run PgAdmin4 on GOV.UK PaaS to administer your Postgres backing services.
 
 [sentry](sentry) shows you how to run the Sentry exception monitoring tool
 on GOV.UK PaaS.
 
+[stratos](strator) is an Open Source Web-based UI (Console) for managing Cloud Foundry. It allows users and administrators to both manage applications running in the Cloud Foundry cluster and perform cluster management tasks.
+
 [the-hive](the-hive) is an open-source incident management platform.
 
-[pgadmin4](pgadmin) shows you how to run PgAdmin4 on GOV.UK PaaS to administer your Postgres backing services.
+
 
 ## Other sources of examples
 
