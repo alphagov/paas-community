@@ -70,6 +70,7 @@ cf a
 ```
 
 test the app
+```
 curl https://<APP NAME>.cloudapps.digital/hello
 ```
 
