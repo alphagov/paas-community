@@ -4,7 +4,7 @@ A minimal [rust] app using the [rocket] framework that is deployed to [GOV.UK Pa
 
 - [`Procfile`](Procfile) tells the runtime how to start the application 
 - [`main.rs`](src/main.rs) is the sample [rust] application
-  - emits logs using [rust logging](XXXX) in line with the [12 factor app logging guidance](https://12factor.net/logs)
+  - emits logs using [rust logging] in line with the [12 factor app logging guidance](https://12factor.net/logs)
 - [`manifest.yml`](manifest.yml) provides runtime settings such as the application name, memory size 
 - [`Cargo.toml`](Cargo.toml) contains the dependencies that are installed using [cargo] and indicates that the [rust buildpack] should be used
 
