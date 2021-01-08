@@ -1,17 +1,16 @@
 # Hello world app in rust and rocket 
 
-A minimal [rust] app using the [rocket] framework that is deployed to [GOV.UK PaaS] using the [command line interface] and the [rust buildpack]
+A minimal [rust] app using the [rocket] framework that is deployed to [GOV.UK PaaS] using the [command line interface] and the [rust custom buildpack]
 
-- [`Procfile`](Procfile) tells the runtime how to start the application 
+- [`Cargo.toml`](Cargo.toml) contains the dependencies that are installed using [cargo] and indicates that the [rust custom buildpack] should be used
 - [`main.rs`](src/main.rs) is the sample [rust] application
-  - emits logs using [rust logging] in line with the [12 factor app logging guidance](https://12factor.net/logs)
 - [`manifest.yml`](manifest.yml) provides runtime settings such as the application name, memory size 
-- [`Cargo.toml`](Cargo.toml) contains the dependencies that are installed using [cargo] and indicates that the [rust buildpack] should be used
-
+- [`Procfile`](Procfile) tells the runtime how to start the application 
+- [`rust-toolchain`](rust-toolchain) 
 
 ## Demo
 
-[![](rust-rocket.gif)](https://asciinema.org/a/XXXXXXXX?speed=4&size=medium&autoplay=1)
+[![](rust-rocket.gif)](hhttps://asciinema.org/a/383369?speed=4&size=medium&autoplay=1)
 
 ## Commands
 
@@ -27,7 +26,7 @@ rustup default nightly
 
 compile and run the app locally
 ```
-cargo run &
+cargo run --release &
 ```
 
 test the app
@@ -95,7 +94,7 @@ cf delete <APP NAME>
 [GOV.UK PaaS]: https://docs.cloud.service.gov.uk
 [homebrew]: https://brew.sh
 [rocket]: https://rocket.rs/
-[rust buildpack]: https://github.com/alphagov/cf-buildpack-rust
+[rust custom buildpack]: https://github.com/alphagov/cf-buildpack-rust
 [rust logging]: https://docs.rs/log/0.4.11/log/
 [rust]: https://www.rust-lang.org/
 [rustup]: https://rustup.rs/
