@@ -95,7 +95,7 @@ cf delete <APP NAME>
 [GOV.UK PaaS]: https://docs.cloud.service.gov.uk
 [homebrew]: https://brew.sh
 [rocket]: https://rocket.rs/
-[rust buildpack]: https://docs.python.org/3/
-[rust logging]: XXXX
-[rust]: https://docs.python.org/3/
+[rust buildpack]: https://github.com/alphagov/cf-buildpack-rust
+[rust logging]: https://docs.rs/log/0.4.11/log/
+[rust]: https://www.rust-lang.org/
 [rustup]: https://rustup.rs/
