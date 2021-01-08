@@ -1,0 +1,6 @@
+---
+applications:
+- name: hello-rust-rocket
+  memory: 64M
+  buildpacks:
+  - https://github.com/alphagov/cf-buildpack-rust
