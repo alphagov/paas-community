@@ -1,6 +1,15 @@
 ---
 applications:
 - name: hello-rust-rocket
+  random-route: true
   memory: 64M
+  disk_quota: 64M
+  env:
+    ROCKET_PORT: 8080
   buildpacks:
   - https://github.com/alphagov/cf-buildpack-rust
+  health-check-type: http
+  health-check-http-endpoint: /
+  metadata:
+    annotations:
+      source: https://github.com/alphagov/paas-community
