@@ -10,7 +10,7 @@ A minimal [rust] app using the [rocket] framework that is deployed to [GOV.UK Pa
 
 ## Demo
 
-[![](rust-rocket.gif)](hhttps://asciinema.org/a/383369?speed=4&size=medium&autoplay=1)
+[![](rust-rocket.gif)](https://asciinema.org/a/383369?speed=4&size=medium&autoplay=1)
 
 ## Commands
 
