@@ -1,4 +1,6 @@
 boto3
+flake8
 flask
 gunicorn
+pip
 pyopenssl
