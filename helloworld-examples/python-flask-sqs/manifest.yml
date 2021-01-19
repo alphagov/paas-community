@@ -7,3 +7,5 @@ applications:
   buildpack: python_buildpack
   health-check-type: http
   health-check-http-endpoint: /hello
+  services:
+    - hello-standard
