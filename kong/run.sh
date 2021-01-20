@@ -17,6 +17,7 @@
 
 export KONG_PROXY_LISTEN=0.0.0.0:8080
 #export KONG_ADMIN_LISTEN=0.0.0.0:8001
+export KONG_PREFIX=/home/vcap/deps/0/apt/usr/local/kong/
 export LD_LIBRARY_PATH=/home/vcap/deps/0/apt/usr/local/lib:/home/vcap/deps/0/apt/usr/local/share/lua/5.1/:/usr/bin/:/home/vcap/deps/0/apt/usr/local/openresty/bin/:/home/vcap/deps/0/apt/usr/local/bin:/home/vcap/deps/0/apt/usr/bin:/home/vcap/deps/0/apt/usr/local/openresty/openssl/lib:/home/vcap/deps/0/apt/usr/local/openresty/luajit/lib/:$LD_LIBRARY_PATH
 export LUA_PATH='/home/vcap/deps/0/apt/usr/local/share/lua/5.1/?.lua;/home/vcap/deps/0/apt/usr/local/share/lua/5.1/?/init.lua;/home/vcap/deps/0/apt/usr/local/openresty/lualib/?.lua'
 export LUA_CPATH='/home/vcap/deps/0/apt/usr/local/lib/lua/5.1/?.so;/home/vcap/deps/0/apt/usr/local/lib/lua/5.1/?/?.so;/home/vcap/deps/0/apt/usr/local/openresty/luajit/lib/?.so.2;/home/vcap/deps/0/apt/usr/local/lib/lua/5.1/socket/?.so;/home/vcap/deps/0/apt/usr/local/openresty/lualib/?.so'
