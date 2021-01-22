@@ -47,17 +47,17 @@ cf a
 
 test the app
 ```
-curl https://<APP NAME>.cloudapps.digital/hello
+curl -L https://<APP NAME>.cloudapps.digital/hello
 ```
 
 send a message
 ```
-curl https://<APP NAME>.cloudapps.digital/send
+curl -vL https://<APP NAME>.cloudapps.digital/send
 ```
 
 receive a message
 ```
-curl https://<APP NAME>.cloudapps.digital/receive
+curl -vL https://<APP NAME>.cloudapps.digital/receive
 ```
 
 look at the logs
