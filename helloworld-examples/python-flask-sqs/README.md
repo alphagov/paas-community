@@ -135,5 +135,5 @@ cf delete <APP NAME>
 [pyopenssl]: https://www.pyopenssl.org/en/stable/
 [python buildpack]: https://docs.cloudfoundry.org/buildpacks/python/index.html
 [python]: https://docs.python.org/3/
-[SQS backing service]: (https://docs.cloud.service.gov.uk/deploying_services/sqs/)
+[SQS backing service]: https://docs.cloud.service.gov.uk/deploying_services/sqs/
 [wsgi]: https://wsgi.readthedocs.io/en/latest/
