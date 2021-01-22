@@ -1,7 +1,7 @@
 boto3
+cfenv
 flake8
 flask
 gunicorn
 pip
 pyopenssl
-cfenv
