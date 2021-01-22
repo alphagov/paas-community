@@ -22,37 +22,6 @@ A minimal [python] app using the [flask] [wsgi] framework and the [SQS backing s
 
 ## Commands
 
-install python3
-```
-brew install python3
-```
-
-create virtual environment and activate
-```
-python3 -m venv venv
-. venv/bin/activate
-```
-
-install dependencies into virtual environment 
-```
-pip3 install -r requirements.txt
-```
-
-run the app locally using http
-```
-FLASK_APP=hello.py flask run --debugger --reload --host localhost --port 8080
-```
-
-run the app locally using https
-```
-FLASK_APP=hello.py flask run --debugger --reload --host localhost --port 8080 --cert=adhoc
-```
-
-run the app locally using gunicorn
-```
-gunicorn hello:app
-```
-
 install the Cloud Foundry CLI with [homebrew]
 
 ```
