@@ -31,18 +31,49 @@ brew install cloudfoundry/tap/cf-cli
 log into GOV.UK PaaS (assumes you have an account, see [gettingstarted])
 
 ```
-cf login -a https://api.cloud.service.gov.uk --sso
+cf login -a https://api.lomndon.cloud.service.gov.uk --sso
+```
+
+target org / space
+
+```
+cf target -o <ORG> -s <SPACE>
+```
+
+check apps
+```
+cf apps
+```
+
+
+create a queue
+```
+cf create-service aws-sqs-queue standard hello-standard
+```
+
+check for completion 
+```
+watch cf services
+```
+
+check the queue
+```
+cf service hello-standard
 ```
 
 deploy the app
 ```
-cf t -o <YOUR_ORG> -s <YOUR_SPACE>
 cf push
 ```
 
 check the app is running
 ```
-cf a
+cf apps
+```
+
+check the app is bound to the queue
+```
+cf service hello-standard
 ```
 
 test the app
@@ -52,38 +83,43 @@ curl -L https://<APP NAME>.cloudapps.digital/hello
 
 send a message
 ```
-curl -vL https://<APP NAME>.cloudapps.digital/send
+curl -vL https://<APP NAME>.cloudapps.digital/send | jq .
 ```
 
 receive a message
 ```
-curl -vL https://<APP NAME>.cloudapps.digital/receive
+curl -vL https://<APP NAME>.cloudapps.digital/receive | jq .
 ```
 
 look at the logs
 ```
-cf logs <APP NAME>
+cf logs hello-python-flask-sqs
 ```
 
 jump into the container
 
 ```
-cf ssh <APP NAME>
+cf ssh hello-python-flask-sqs
 ```
 
 scale the app
 ```
-cf scale -i 3 <APP NAME>
+cf scale -i 3 hello-python-flask-sqs
 ```
 
 stop the app
 ```
-cf stop <APP NAME>
+cf stop hello-python-flask-sqs
+```
+
+unbind the service
+```
+cf unbind-service hello-python-flask-sqs hello-standard
 ```
 
 delete the app
 ```
-cf delete <APP NAME>
+cf delete -f hello-python-flask-sqs
 ```
 
 [12 factor app logging guidance]: https://12factor.net/logs
