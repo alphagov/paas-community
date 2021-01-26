@@ -18,7 +18,7 @@ A minimal [python] app using the [flask] [wsgi] framework and the [SQS backing s
 
 ## Demo
 
-[![](python-flask-sqs.gif)](https://asciinema.org/a/XXXX?speed=4&size=medium&autoplay=1)
+[![](python-flask-sqs.gif)](https://asciinema.org/a/ijIpIAHO9qTI7qtrtRNSPYSHy?speed=2&size=medium&autoplay=1)
 
 ## Commands
 
