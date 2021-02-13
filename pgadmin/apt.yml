@@ -1,3 +1,4 @@
 ---
 packages:
   - libpq-dev
+  - postgresql-client
