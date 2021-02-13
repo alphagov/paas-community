@@ -1,0 +1,10 @@
+---
+applications:
+- name: paas-prometheus-exporter
+  memory: 60M
+  instances: 1
+  buildpacks:
+    - go_buildpack
+  stack: cflinuxfs3
+  env:
+    GOPACKAGENAME: github.com/alphagov/paas-prometheus-exporter

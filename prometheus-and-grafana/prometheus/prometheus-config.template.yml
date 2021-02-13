@@ -1,0 +1,59 @@
+scrape_configs:
+- job_name: prometheus
+  honor_timestamps: true
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  metrics_path: /metrics
+  scheme: http
+  static_configs:
+  - targets:
+    - localhost:8080
+
+- job_name: govuk_paas_redis
+  scheme: https
+  basic_auth:
+    username: ((paas_readonly_username))
+    password: ((paas_readonly_password))
+  static_configs:
+  - targets:
+    - redis.metrics.london.cloud.service.gov.uk
+  metrics_path: /metrics
+  scrape_interval: 300s
+  scrape_timeout: 120s
+  honor_timestamps: true
+  metric_relabel_configs:
+  # Prepend `paas_redis_` so the metrics are easier to find
+  - action: replace
+    source_labels: [__name__]
+    target_label: __name__
+    regex: (.*)
+    replacement: paas_redis_${1}
+
+- job_name: paas_prometheus_exporter
+  scheme: https
+  static_configs:
+  - targets:
+    - paas-prometheus-exporter-smart-toucan-jg.london.cloudapps.digital
+  metrics_path: /metrics
+  metric_relabel_configs:
+  # Prepend `paas_` so the metrics are easier to find
+  - action: replace
+    source_labels: [__name__]
+    target_label: __name__
+    regex: (.*)
+    replacement: paas_${1}
+
+- job_name: app_custom_metrics
+  scheme: http
+  dns_sd_configs:
+  - names:
+      - observe-demo-frontend.apps.internal
+      - observe-demo-backend.apps.internal
+      - observe-demo-worker.apps.internal
+    port: 8080
+    type: A
+  relabel_configs:
+  - action: replace
+    source_labels: [__meta_dns_name]
+    target_label: host
+    replacement: ${1}

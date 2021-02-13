@@ -1,0 +1,19 @@
+---
+applications:
+  - name: grafana
+    random-route: true
+    buildpacks:
+      - binary_buildpack
+    services:
+      - grafana-db
+    env:
+      GF_SECURITY_DISABLE_INITIAL_ADMIN_CREATION: true
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: ((admin_password))
+    disk_quota: 256M
+    memory: 256M
+    processes:
+      - type: web
+        health-check-type: http
+        health-check-http-endpoint: /
+        command: ./run.sh

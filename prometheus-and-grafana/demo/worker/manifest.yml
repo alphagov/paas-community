@@ -1,0 +1,15 @@
+---
+applications:
+  - name: observe-demo-worker
+    random-route: true
+    buildpacks:
+      - ruby_buildpack
+    services:
+      - autoscaler
+      - observe-demo-db
+    disk_quota: 128M
+    memory: 72M
+    type: web
+    health-check-type: http
+    health-check-http-endpoint: /metrics
+    command: ruby main.rb

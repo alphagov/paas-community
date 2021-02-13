@@ -1,0 +1,14 @@
+---
+applications:
+  - name: observe-demo-simulated-visitors
+    no-route: true
+    buildpacks:
+      - binary_buildpack
+    env:
+      FRONTEND_DOMAIN: observe-demo-frontend-appreciative-duiker-eh.london.cloudapps.digital
+    disk_quota: 128M
+    memory: 32M
+    type: worker
+    command: ./run.sh
+    health-check-type: process
+    instances: 3
