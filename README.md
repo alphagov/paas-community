@@ -14,7 +14,6 @@ with departments and councils.
 
 [helloworld-examples](helloworld-examples) some simple examples showing how to deploy different languages
 
-
 [jaeger](jaeger) shows you how to run a distributed tracing and analysis server.
 
 [kong](kong) enables you to run [Kong](https://konghq.com/), the open source API platform on GOV.UK PaaS
@@ -33,6 +32,10 @@ on GOV.UK PaaS.
 ## Other sources of examples
 
 GOV.UK PaaS is based on Cloud Foundry. The Cloud Foundry community maintain another shared set of examples in [the cloudfoundry-samples GitHub organisation](https://github.com/cloudfoundry-samples)
+
+Some of the GOV.UK PaaS tenants also have examples to share and ways they've solved problems too:
+* How DfE are [using terraform to deploy a Prometheus ecosystem to Cloud Foundry for monitoring](https://github.com/DFE-Digital/cf-monitoring/) on GOV.UK PaaS
+* Recordings of presentations from our [GOV.UK PaaS Community Show and Tells are available on YouTube](https://www.youtube.com/playlist?list=PL5tovFCB3CsDl4_kwKdWL8tXuMbP2LVH7) 
 
 ## Contributing
 
