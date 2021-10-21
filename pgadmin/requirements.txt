@@ -1,7 +1,7 @@
 # This is VERY required, because it provies the pgadmin4 package to be installed later
 https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.17/pip/pgadmin4-4.17-py2.py3-none-any.whl
 alembic==1.4.1
-Babel==2.8.0
+Babel==2.9.1
 bcrypt==3.1.7
 blinker==1.4
 cfenv==0.5.3
