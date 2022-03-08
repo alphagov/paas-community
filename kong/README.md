@@ -4,7 +4,7 @@
 ## How to deploy on [GOV.UK Platform-as-a-Service](https://www.cloud.service.gov.uk)
 
 ```
-cf create-service postgres small-ha-11 kong-db
+cf create-service postgres small-ha-13 kong-db
 cf push your-kong
 ```
 
