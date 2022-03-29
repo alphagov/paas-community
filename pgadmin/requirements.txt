@@ -27,7 +27,7 @@ Jinja2==2.11.1
 Mako==1.1.2
 MarkupSafe==1.1.1
 orderedmultidict==1.0.1
-paramiko==2.7.1
+paramiko==2.10.1
 passlib==1.7.1
 pgadmin4==4.17
 psutil==5.6.6
