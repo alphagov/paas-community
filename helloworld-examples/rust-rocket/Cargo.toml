@@ -4,4 +4,4 @@ version = "0.0.1"
 publish = false
 
 [dependencies]
-rocket = "0.4.6"
+rocket = "0.4.7"
