@@ -1,0 +1,18 @@
+---
+applications:
+  - name: prometheus
+    random-route: true
+    buildpacks:
+      - binary_buildpack
+    services:
+      - prometheus-db
+    disk_quota: 4G
+    memory: 4G
+    env:
+      PAAS_READONLY_USERNAME: miki.mokrysz+prometheus-endpoint-testing@digital.cabinet-office.gov.uk
+      PAAS_READONLY_PASSWORD: ",JYZrE[eFo786wW/z8At"
+    processes:
+      - type: web
+        health-check-type: http
+        health-check-http-endpoint: /-/ready
+        command: ./run.sh
