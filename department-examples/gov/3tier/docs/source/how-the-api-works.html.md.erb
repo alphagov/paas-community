@@ -1,18 +1,111 @@
 ---
-title: How the API works
+title: How the Pothole reporting service works
 weight: 15
 ---
 
-# How the API works
+# How the Pothole reporting service works
 
-Use this section to explain how your API works conceptually, if your API is complicated and users must:
+This is a simple three tier demo app that was originally deployed to our cloud foundry 
+but is being repurposed to demonstrate how such an app may be hosted on ECS/Fargate using [AWS Copilot](https://aws.github.io/copilot-cli/).
 
-- understand and use a sequence of API requests and responses
-- understand how different backend systems interact
+## Architecture
 
-Only include this section if you’ve discovered a need for it in your research and tested it thoroughly. This is because conceptual information can:
+![](/architecture/architecture.svg)
 
-- get in the way of developers finding the task-based guidance they’re looking for
-- be ignored or only partially read by developers
+The service comprises:
 
-You should write this section as an explanation of flow or a sequence of steps, using numbered steps if possible. For example, see [How the Document Checking Service works](https://dcs-pilot-docs.cloudapps.digital/integrating-with-the-dcs/#how-the-dcs-works) or [How GOV.UK Pay works](https://docs.payments.service.gov.uk/payment_flow/#how-gov-uk-pay-works).
+### a front end app in ruby/sinatra
+
+  - a public load balanced app with a route from the internet
+  - an S3 bucket  to store photos of potholes
+  - a connection to the private API service
+
+### a back end API service in ruby/sinatra 
+  - a private app that is not internet facing
+  - a postgres backing service to store report data 
+
+### a static documentation site
+  -  in tech docs template format 
+  - generated with middleman
+  - hosted on a public load balanced app with a route from the internet using nginx
+
+### a prototype in the GOV.UK Prototyping kit using nodejs
+  - hosted on a public load balanced app with a route from the internet
+
+### a scheduled background task using python
+  - to periodically send sms notifications usng GOV.UK Notify
+
+
+## the flow through the system 
+1. the uses accessed the service with their browser to report a pothole
+2. they fill in the web form and submit the details and the photo of the Pothole to the front end
+3. the front end stores the pothole image in an s3 bucket
+4. the front end persists the data by writing to the internal api 
+5. the internal api persists the data in a postgres database
+6. periodically a back end worker task processed the list of posthole and sends a summary digest via govuk Notify
+
+## installing on GOV.UK PaaS
+
+`git clone https://github.com/alphagov/paas-com`
+
+`cd department-examples/gov/3tier/`
+
+`cf login --sso`
+
+`cf target -o ORG_NAME -s SPACE_NAME`
+
+`cf create-service aws-s3-bucket default gov-pothole-imgs`
+
+`cf create-service postgres tiny-unencrypted-13  backend-postgres`
+
+```
+(
+  cd backend
+  cf7 push
+)
+
+(
+  cd frontend
+  cf7 push
+)
+
+(
+  cf add-network-policy gov-frontend --destination-app gov-backend
+)
+
+```
+
+## installing on ECS Fargate using AWS Copilot
+
+the application architecure is as before but the runtime is different
+
+- targets AWS ECS
+- workloads run on fargate
+- requires an aws account
+- front end is a load balanced web service
+- back end is a private service
+- uses service discovery  
+
+
+`copilot app init`
+
+`copilot env init`
+
+`copilot env deploy`
+
+`copilot svc init`
+
+
+`copilot svc deploy`
+
+`copilot svc init`
+
+`copilot svc deploy`
+
+`copilot storage`
+
+`copilot storage`
+
+
+
+
