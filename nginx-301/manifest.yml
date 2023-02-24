@@ -6,4 +6,4 @@ applications:
   health-check-type: port
   instances: 1
   env:
-    NEW_DOMAIN: leeporte.co.uk
+    NEW_DOMAIN: ((new-domain))
