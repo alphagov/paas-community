@@ -18,6 +18,8 @@ with departments and councils.
 
 [kong](kong) enables you to run [Kong](https://konghq.com/), the open source API platform on GOV.UK PaaS
 
+[nginx-301](nginx-301) a configuration of nginx ready for performing 301 domain redirects for things that have moved off the platform.
+
 [pgadmin4](pgadmin) shows you how to run PgAdmin4 on GOV.UK PaaS to administer your Postgres backing services.
 
 [sentry](sentry) shows you how to run the Sentry exception monitoring tool
