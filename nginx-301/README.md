@@ -12,7 +12,7 @@ cf unmap-route OLD_APP_NAME cloudapps.digital --hostname HOSTNAME-TO-BE-REDIRECT
 Where OLD_APP_NAME is the name of the application that now exists on a new host
 
 ```
-cf push --var new-domain=MY-NEW-DOMAIN -d cloudapps.digital --hostname HOSTNAME-TO-BE-REDIRECTED
+cf push HOSTNAME-TO-BE-REDIRECTED --var new-domain=MY-NEW-DOMAIN
 ```
 Where MY-NEW-DOMAIN is your new domain name e.g. www.example.com
 
