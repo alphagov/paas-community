@@ -1,0 +1,9 @@
+applications:
+- name: nginx-301
+  memory: 64M
+  buildpacks:
+  - https://github.com/cloudfoundry/nginx-buildpack.git
+  health-check-type: port
+  instances: 1
+  env:
+    NEW_DOMAIN: ((new-domain))
